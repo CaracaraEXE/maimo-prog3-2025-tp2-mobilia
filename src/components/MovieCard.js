@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MovieCard = () => {
+const MovieCard = ({title}) => {
   return (
     <div className='col-span-3'>
-        <p>Yayyy</p>
+        <p>{title}</p>
     </div>
   )
 }
