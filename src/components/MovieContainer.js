@@ -5,6 +5,7 @@ import axios from 'axios'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Moirai_One } from 'next/font/google';
+import Link from 'next/link';
 
 const MovieContainer = ({id}) => {
 
@@ -32,8 +33,10 @@ const MovieContainer = ({id}) => {
     <div>
         {!loading &&
         <>
-            <h1>{movieData.title}</h1>
-            <h2>{movieData.tagline}</h2>
+            <Link href={"/"}>Return</Link>
+
+            <h2>{movieData.title}</h2>
+            <h3>{movieData.tagline}</h3>
             <p>{movieData.overview}</p>
             <Image
                 src={("https://image.tmdb.org/t/p/original/" + movieData.poster_path)}
@@ -41,7 +44,7 @@ const MovieContainer = ({id}) => {
                 width={200}
                 height={200}
             />
-            <p>Runtime: {parseInt(movieData.runtime / 60)}{parseInt(movieData.runtime % 60 > 1? "Hour" : "Hours")}</p>            
+            <p>Runtime: {parseInt(movieData.runtime / 60)} H {parseInt(movieData.runtime % 60)} M</p>            
         </>
         }
 

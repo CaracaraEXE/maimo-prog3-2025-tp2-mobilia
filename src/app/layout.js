@@ -1,8 +1,9 @@
-import { Geist, Geist_Mono, Amarante, Oregano } from "next/font/google";
+import { Limelight, Amarante, Oregano } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+
 
 const amarante = Amarante({
   variable: "--font-amarante",
@@ -16,15 +17,12 @@ const oregano = Oregano({
   weight:"400",
 })
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const lime_light = Limelight({
+  variable: "--font-limelight",
+  subsets:["latin"],
+  weight:"400",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "TP2 - MOVIES",
@@ -35,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${amarante.variable} ${oregano.variable} antialiased`}
+        className={`${lime_light.variable} ${amarante.variable} ${oregano.variable} antialiased`}
       >
         <Header/>
         {children}

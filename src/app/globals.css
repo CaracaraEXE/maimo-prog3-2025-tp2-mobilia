@@ -10,8 +10,11 @@ body{
 
 @theme inline{
   --font-amarante:var(--font-amarante);
+  --font-limelight:var(--font-limelight);
 }
 
-h1{
-  font-family: var(--font-amarante);
+h1, nav{
+  font-family: var(--font-limelight);
 }
+
+/*Colors for the proyect: */

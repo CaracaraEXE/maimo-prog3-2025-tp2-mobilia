@@ -4,7 +4,7 @@ import Aside from "@/components/Aside";
 
 export default function Home() {
   return (
-    <div className="flex bg-blue-400 w-80 mx-auto">
+    <div className="flex lg:w-[75%] mx-auto">
     <Aside/>
     <HomeBody/>
     </div>
