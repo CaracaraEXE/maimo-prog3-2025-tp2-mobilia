@@ -2,7 +2,9 @@ import React from 'react'
 
 const MovieCard = () => {
   return (
-    <div>MovieCard</div>
+    <div className='col-span-3'>
+        <p>Yayyy</p>
+    </div>
   )
 }
 
