@@ -4,7 +4,6 @@ import React from 'react'
 import axios from 'axios'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Moirai_One } from 'next/font/google';
 import Link from 'next/link';
 
 const MovieContainer = ({id}) => {

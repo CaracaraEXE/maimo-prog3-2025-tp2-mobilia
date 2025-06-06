@@ -3,9 +3,8 @@ import Navbar from './Navbar'
 
 const Aside = () => {
   return (
-    <aside>
+    <aside className='bg-green-950'>
         <Navbar></Navbar>
-        <p>Test</p>
     </aside>
   )
 }

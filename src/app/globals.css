@@ -17,4 +17,8 @@ h1, nav{
   font-family: var(--font-limelight);
 }
 
+li{
+  list-style-type: none;
+}
+
 /*Colors for the proyect: */
