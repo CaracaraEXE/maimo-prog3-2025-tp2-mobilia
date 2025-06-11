@@ -38,10 +38,9 @@ getData();
 
   
   return (
-    <div className='bg-green-300 w-[50em]'>
-      <p>Estuve enferma toda la semana :c</p>
-      <Link href={"/movie/1100988"}>Test rapido de peliculas</Link>
-      <h2>Recent Films</h2>
+    <div className='home_body w-[50em] h-screen overflow-scroll text-center'>
+      <h2 className='text-3xl'>Featured Film</h2>
+      <h2 className='text-3xl'>Recent Films</h2>
       {!loading &&
 
         <>

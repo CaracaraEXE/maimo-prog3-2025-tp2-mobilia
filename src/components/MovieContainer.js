@@ -5,6 +5,7 @@ import axios from 'axios'
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import LoadingIcon from './LoadingIcon';
 
 const MovieContainer = ({id}) => {
 
@@ -29,25 +30,36 @@ const MovieContainer = ({id}) => {
      },[]);
 
   return (
-    <div>
+    <div className='movie_container w-[50em] m-auto py-5'>
         {!loading &&
         <>
-            <Link href={"/"}>Return</Link>
+            <div className='flex justify-center'>
+                <Link href={"/"} className='p-2 px-4 bg-black text-white inline-block'><span className='border-white border-1 px-5 py-1'>Return</span></Link>
+            </div>
 
-            <h2>{movieData.title}</h2>
-            <h3>{movieData.tagline}</h3>
-            <p>{movieData.overview}</p>
-            <Image
-                src={("https://image.tmdb.org/t/p/original/" + movieData.poster_path)}
-                alt={`${movieData.title} Poster`}
-                width={200}
-                height={200}
-            />
-            <p>Runtime: {parseInt(movieData.runtime / 60)} H {parseInt(movieData.runtime % 60)} M</p>            
+            <div className='flex m-5'>
+                <Image
+                    src={("https://image.tmdb.org/t/p/original/" + movieData.poster_path)}
+                    alt={`${movieData.title} Poster`}
+                    width={200}
+                    height={200}
+                />
+                <div className='movie_info m-5'>
+                    <h2 className='text-3xl bg-gray-400 py-1 pl-2 border-b-4 border-double'>&#10022; {movieData.title}</h2>
+                    <p className='italic py-5 text-center'>{movieData.tagline}</p>
+                    <p className='mb-10 text-justify'>{movieData.overview}</p>
+                    <p>Runtime: {parseInt(movieData.runtime / 60)} H {parseInt(movieData.runtime % 60)} M</p>            
+                </div>
+            </div>
+            <div className='flex justify-center'>
+                <a className='p-2 px-4 text-center bg-black text-white inline-block'><span className='border-white border-1 px-5 py-1'>Add to Favorites</span></a>
+                <a className='p-2 px-4 text-center bg-black text-white inline-block ml-2.5'><span className='border-white border-1 px-5 py-1'>Where to Watch It?</span></a>
+                <a className='p-2 px-4 text-center bg-black text-white inline-block ml-2.5'><span className='border-white border-1 px-5 py-1'>Share This Page</span></a>
+            </div>
         </>
         }
 
-        {loading && "Loading..."}
+        {loading && <LoadingIcon/>}
 
         {error && "FUK U"}
     </div>

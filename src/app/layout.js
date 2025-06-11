@@ -1,9 +1,14 @@
-import { Limelight, Amarante, Oregano } from "next/font/google";
+import { Limelight, Amarante, Oregano, IM_Fell_French_Canon } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
+const french_canon = IM_Fell_French_Canon({
+  variable:"--font-frenchcanon",
+  subsets:["latin"],
+  weight:"400",
+})
 
 const amarante = Amarante({
   variable: "--font-amarante",
@@ -33,7 +38,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${lime_light.variable} ${amarante.variable} ${oregano.variable} antialiased`}
+        className={`${lime_light.variable} ${amarante.variable} ${oregano.variable} ${french_canon.variable} antialiased`}
       >
         <Header/>
         {children}

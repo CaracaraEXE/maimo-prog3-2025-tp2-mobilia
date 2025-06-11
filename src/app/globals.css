@@ -11,14 +11,50 @@ body{
 @theme inline{
   --font-amarante:var(--font-amarante);
   --font-limelight:var(--font-limelight);
+  --font-oregano:var(--font-oregano);
+  --font-frenchcanon:var(--font-frenchcanon);
 }
 
-h1, nav{
-  font-family: var(--font-limelight);
+body{
+  background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
-li{
+h1, h2, h3{
+  font-family: var(--font-amarante);
+}
+
+a, .movie_info, footer{
+  font-family: var(--font-frenchcanon);
+}
+
+nav li{
   list-style-type: none;
+
+}
+
+li a{  
+  transition: color 0.5s, background-color 0.5s;
+  padding: 0.5em 1em;
+    display: inline-block;
+    font-weight: 600;
+
+}
+
+nav li a:hover{
+  color: white;
+  background-color: black;
+}
+
+.home_body, .movie_container{
+  background-image: linear-gradient(0deg, #dbdbdb 25%, #d4d4d4 25%, #d4d4d4 50%, #dbdbdb 50%, #dbdbdb 75%, #d4d4d4 75%, #d4d4d4 100%);
+background-size: 20.00px 20.00px;
 }
 
 /*Colors for the proyect: */

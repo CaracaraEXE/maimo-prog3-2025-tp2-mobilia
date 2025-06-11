@@ -13,17 +13,18 @@ const MovieGrid = ({movies}) => {
   }
 
   return (
-    <div className='grid grid-cols-12 gap-10 px-25'>
+    <div className='grid grid-cols-12 px-5 divide-y-2 '>
       {movies.map((movie) =>
-      <div key={movie.id} className='col-span-3' onClick={() => handleClick(movie.id)}>
-        <h2>{movie.title}</h2>
+      <div key={movie.id} className='col-span-3 border-black p-5 border-dotted' onClick={() => handleClick(movie.id)}>
+        <h3 className='text-[1em]'>{movie.title}</h3>
         <Image
           src={("https://image.tmdb.org/t/p/original/" + movie.poster_path)}
           alt={`${movie.title} Poster`}
-          width={300}
-          height={300}
+          width={200}
+          height={200}
+          className='mb-2.5'
       />
-        <Link href={`/movie/${movie.id}`} className='w-full text-center bg-amber-800 text-white block'>Info</Link>
+        <Link href={`/movie/${movie.id}`} className='w-full p-2 text-center bg-black text-white block'><span className='border-white border-1 px-13 py-1'>Info</span></Link>
         </div>
       )}
         
