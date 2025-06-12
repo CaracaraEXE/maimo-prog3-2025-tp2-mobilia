@@ -39,12 +39,12 @@ getData();
   
   return (
     <div className='home_body w-[50em] h-screen overflow-scroll text-center'>
-      <h2 className='text-3xl'>Featured Film</h2>
-      <h2 className='text-3xl'>Recent Films</h2>
       {!loading &&
 
         <>
-        
+        <h2 className='text-3xl mt-5'>&#10022; Featured Film &#10022;</h2>
+        <FeaturedMovie movies={movies} key={"featured_movie"}/>
+        <h2 className='text-3xl'>&#10022; Recent Films &#10022;</h2>
         <MovieGrid movies={movies} key={"moviegrid"}/>
         </>
       }
