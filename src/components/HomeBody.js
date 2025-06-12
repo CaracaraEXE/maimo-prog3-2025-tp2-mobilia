@@ -39,7 +39,7 @@ getData();
 
   
   return (
-    <div className='home_body lg:w-[50em] h-screen overflow-scroll text-center'>
+    <div className='home_body lg:w-[50em] text-center'>
       {!loading &&
 
         <>
