@@ -30,7 +30,7 @@ const MovieContainer = ({id}) => {
      },[]);
 
   return (
-    <div className='movie_container w-[50em] m-auto py-5'>
+    <div className='movie_container lg:w-[50em] m-auto py-5'>
         {!loading &&
         <>
             <div className='flex justify-center'>
@@ -54,7 +54,7 @@ const MovieContainer = ({id}) => {
                 </div>
             </div>
             
-            <div className='flex justify-center'>
+            <div className='flex  justify-center mx-10'>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9829; Add to Favorites</span></a>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9974; Where to Watch It?</span></a>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9993; Share This Page</span></a>
