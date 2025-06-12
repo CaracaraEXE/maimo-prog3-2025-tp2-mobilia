@@ -10,8 +10,8 @@ const FeaturedMovie = ({movies}) => {
     const FeaturedMovie = movies[0];
 
   return (
-    <div className=''>
-      <div>
+    <div>
+      <div className='flex lg:block'>
         <Image
                             src={("https://image.tmdb.org/t/p/original/" + FeaturedMovie.poster_path)}
                             alt={`${FeaturedMovie.title} Poster`}
