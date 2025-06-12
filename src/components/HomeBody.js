@@ -44,7 +44,7 @@ getData();
 
         <>
 
-        <p className='italic text-center p-5'>A website made for the love of art.</p>
+        <p className='italic text-center p-5'>Testing yo' ass</p>
 
         <Image
           src="/assets/lune.jpg"
