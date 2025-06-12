@@ -37,7 +37,7 @@ getData();
 
 },[]);
 
-  
+  //BRANCHES ARE STOOPID
   return (
     <div className='home_body lg:w-[50em] text-center'>
       {!loading &&
