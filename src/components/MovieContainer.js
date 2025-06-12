@@ -41,13 +41,13 @@ const MovieContainer = ({id}) => {
                 <Image
                     src={("https://image.tmdb.org/t/p/original/" + movieData.poster_path)}
                     alt={`${movieData.title} Poster`}
-                    width={200}
+                    width={250}
                     height={200}
                 />
                 <div className='movie_info m-5'>
-                    <h2 className="text-3xl py-1 pl-2 border-b-4 border-double">&#10022; {movieData.title}</h2>
+                    <h2 className="text-3xl py-1 pl-2 border-y-4 border-dotted">&#10022; {movieData.title}</h2>
                     <p className='italic py-5 text-center'>&#10077; {!movieData.tagline ? "..." : movieData.tagline } &#10078;</p>
-                    <p className='mb-10 text-justify'>{movieData.overview}</p>
+                    <p className='mb-10 text-justify first-letter:text-3xl'>{movieData.overview}</p>
                     <p><span className='font-bold'>Release Date:</span> {movieData.release_date}</p>
                     <p><span className='font-bold'>Genres:</span> {movieData.genres.map((genre,index) => (<span key={index} > &#10022; {genre.name} </span>))}</p>
                     <p><span className='font-bold'>Runtime:</span> {parseInt(movieData.runtime / 60)} H {parseInt(movieData.runtime % 60)} M</p>            
@@ -55,9 +55,9 @@ const MovieContainer = ({id}) => {
             </div>
             
             <div className='flex justify-center'>
-                <a className='p-2 px-4 text-center bg-black text-white inline-block'><span className='border-white border-1 px-5 py-1'>&#9829; Add to Favorites</span></a>
-                <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-1 px-5 py-1'>&#9974; Where to Watch It?</span></a>
-                <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-1 px-5 py-1'>&#9993; Share This Page</span></a>
+                <a className='p-2 px-4 text-center bg-black text-white inline-block'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9829; Add to Favorites</span></a>
+                <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9974; Where to Watch It?</span></a>
+                <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9993; Share This Page</span></a>
             </div>
         </>
         }

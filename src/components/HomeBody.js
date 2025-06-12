@@ -8,6 +8,7 @@ import axios from 'axios';
 import MovieGrid from './MovieGrid';
 import LoadingIcon from './LoadingIcon';
 import FeaturedMovie from './FeaturedMovie';
+import Image from 'next/image';
 
 const HomeBody = () => {
 
@@ -42,9 +43,19 @@ getData();
       {!loading &&
 
         <>
-        <h2 className='text-3xl mt-5'>&#10022; Featured Film &#10022;</h2>
+
+        <p className='italic text-center p-5'>A website made for the love of art.</p>
+
+        <Image
+          src="/assets/lune.jpg"
+          alt="Cover"
+          width={400}
+          height={400}
+          className='mx-auto'/>
+
+        <h2 className='text-3xl mt-5 border-y-2'>&#10022; Featured Film &#10022;</h2>
         <FeaturedMovie movies={movies} key={"featured_movie"}/>
-        <h2 className='text-3xl'>&#10022; Recent Films &#10022;</h2>
+        <h2 className='text-3xl border-y-2'>&#10022; Recent Films &#10022;</h2>
         <MovieGrid movies={movies} key={"moviegrid"}/>
         </>
       }

@@ -24,7 +24,7 @@ const MovieGrid = ({movies}) => {
           height={200}
           className='mb-2.5'
       />
-        <Link href={`/movie/${movie.id}`} className='w-full p-2 text-center bg-black text-white block'><span className='border-white border-1 px-13 py-1'>Info</span></Link>
+        <Link href={`/movie/${movie.id}`} className='w-full p-2 text-center bg-black text-white block'><span className='border-white border-2 px-13 py-1 border-dotted'>Info</span></Link>
         </div>
       )}
         

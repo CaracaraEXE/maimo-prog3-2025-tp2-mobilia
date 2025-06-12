@@ -20,7 +20,7 @@ const FeaturedMovie = ({movies}) => {
                         />
                         <div className='px-5 flex flex-col'>
                           <h3 className='text-2xl text-left mb-2.5 bg-gray-300 border-l-6 pl-2 border-double'>&#10170; {FeaturedMovie.title}</h3>
-                          <p className='italic text-justify'>{FeaturedMovie.overview}</p>
+                          <p className='italic text-justify first-letter:text-3xl'>{FeaturedMovie.overview}</p>
                           <Link href={`/movie/${FeaturedMovie.id}`} className='w-fit p-2 text-center bg-black text-white m-auto mt-10'><span className='border-white border-1 px-13 py-1'>Learn More...</span></Link>
                         </div>
       </div>
