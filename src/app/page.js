@@ -36,7 +36,7 @@ getData();
     <>
     {!loading &&
         <div className="flex mx-auto w-fit">
-        <aside className='bg-gray-400 px-4 border-black border-x-4 w-[15em]'>
+        <aside className='bg-amber-800 px-4 border-black border-x-4 w-[15em]'>
           <h2 className='text-2xl mt-5 border-y-2'>&#10022; Featured Film &#10022;</h2>
           <FeaturedMovie movies={movies}/>
         </aside>
