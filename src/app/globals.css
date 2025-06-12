@@ -57,12 +57,12 @@ nav li a:hover{
 background-size: 20.00px 20.00px;
 }
 
-.home_body a:hover, .movie_container a:hover{
+a:not(nav li a){
   transition: box-shadow 0.5s, font-weight 0.25s;
   cursor: pointer;
 }
 
-.home_body a:hover, .movie_container a:hover{
+a:hover:not(nav li a){
   box-shadow: 5px 5px 0px rgb(0, 0, 0, 0.5);
   font-weight: bold;
 }
