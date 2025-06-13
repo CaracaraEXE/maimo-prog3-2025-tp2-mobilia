@@ -10,18 +10,19 @@ const FeaturedMovie = ({movies}) => {
     const FeaturedMovie = movies[0];
 
   return (
-    <div className='m-auto my-4 p-4 lg:w-[70%] w-[90%] bg-gray-300 border-dotted border-2'>
-      <div className='flex'>
+    <div>
+      <div className='flex lg:block'>
         <Image
                             src={("https://image.tmdb.org/t/p/original/" + FeaturedMovie.poster_path)}
                             alt={`${FeaturedMovie.title} Poster`}
-                            width={200}
-                            height={200}
+                            width={150}
+                            height={150}
+                            className='m-auto my-2.5'
                         />
                         <div className='px-5 flex flex-col'>
-                          <h3 className='text-2xl text-left mb-2.5 bg-gray-400 border-l-6 pl-2 border-double'>&#10170; {FeaturedMovie.title}</h3>
-                          <p className='italic text-justify first-letter:text-3xl'>{FeaturedMovie.overview}</p>
-                          <Link href={`/movie/${FeaturedMovie.id}`} className='w-fit p-2 text-center bg-black text-white m-auto mt-10'><span className='border-white border-1 px-13 py-1'>Learn More...</span></Link>
+                          <h3 className='text-2xl text-left mb-2.5 bg-gray-400 border-l-6  border-double pl-2'>{FeaturedMovie.title}</h3>
+                          <p className='italic first-letter:text-3xl'>{FeaturedMovie.overview}</p>
+                          <Link href={`/movie/${FeaturedMovie.id}`} className='p-2 text-center bg-black text-white m-auto mt-5'><span className='border-white border-2 p-8 py-1 border-dotted'>Learn More...</span></Link>
                         </div>
       </div>
     </div>
