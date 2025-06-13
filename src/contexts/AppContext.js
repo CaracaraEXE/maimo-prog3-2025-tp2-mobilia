@@ -1,14 +1,23 @@
-import {useState, useEffect, useContext, createContext} from 'react'
+import {useState, useContext, createContext} from 'react'
 
-const AppContextProvider = ({children}) => {
+const AppContext = createContext();
 
+export const AppContextProvider = ({children}) => {
+    const [favorites, setFavorites] = useState([]);
     return(
         <AppContext.Provider
             values={
-                {}
+                {favorites}
             }
         >
             {children}
         </AppContext.Provider>
     )
+}
+
+export const useAppContext = () => {
+    const context = useContext(AppContext)
+    if(!context){
+        throw new Error('use AppContext must be used within a AppContextProvider')
+    }
 }
