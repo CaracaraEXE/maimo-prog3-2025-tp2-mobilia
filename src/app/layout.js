@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { AppContextProvider } from "@/contexts/AppContext";
 
 const french_canon = IM_Fell_French_Canon({
   variable:"--font-frenchcanon",
@@ -40,9 +41,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${lime_light.variable} ${amarante.variable} ${oregano.variable} ${french_canon.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer/>
+        <AppContextProvider>
+          <Header/>
+            {children}
+          <Footer/>
+        </AppContextProvider>
       </body>
     </html>
   );

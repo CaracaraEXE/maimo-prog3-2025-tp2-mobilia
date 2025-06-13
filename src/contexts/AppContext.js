@@ -1,12 +1,14 @@
+'use client'
+
 import {useState, useContext, createContext} from 'react'
 
 const AppContext = createContext();
 
 export const AppContextProvider = ({children}) => {
-    const [favorites, setFavorites] = useState([]);
+    const [favorites, setFavorites] = useState([{}]);
     return(
         <AppContext.Provider
-            values={
+            value={
                 {favorites}
             }
         >
