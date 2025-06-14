@@ -39,6 +39,7 @@ getData();
     {!loading &&
         <div className="lg:flex mx-auto w-fit">
         <aside className='bg-gray-300 border-black border-x-4 lg:w-[15em]'>
+          <p>Nº of Favorites:</p>
           <h2 className='text-2xl mt-5 border-b-2 text-center'>&#10022; Featured Film &#10022;</h2>
           <FeaturedMovie movies={movies}/>
         </aside>

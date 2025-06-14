@@ -1,15 +1,24 @@
 'use client'
 
-import {useState, useContext, createContext} from 'react'
+import {useState, useContext, createContext, useEffect} from 'react'
 
 const AppContext = createContext();
 
 export const AppContextProvider = ({children}) => {
     const [favorites, setFavorites] = useState([{}]);
+
+    const handleAddToFavorites = ({title,image,id}) => {
+        setFavorites([...favorites, {title, image, id}]);
+    }
+
+    useEffect(() => {console.log(favorites)},[favorites]);
+
+    const favoritesQty = favorites.length;
+
     return(
         <AppContext.Provider
             value={
-                {favorites,}
+                {favorites, handleAddToFavorites}
             }
         >
             {children}

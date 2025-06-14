@@ -6,12 +6,15 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import LoadingIcon from './LoadingIcon';
+import { useAppContext } from '@/contexts/AppContext';
 
 const MovieContainer = ({id}) => {
 
     const [movieData,setMovieData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+
+      const {handleAddToFavorites} = useAppContext();
 
      useEffect(() => {
         const getMovieData = async () => {
@@ -28,6 +31,8 @@ const MovieContainer = ({id}) => {
         getMovieData();
 
      },[]);
+
+   
 
   return (
     <div className='movie_container lg:w-[50em] m-auto py-5'>
@@ -55,7 +60,11 @@ const MovieContainer = ({id}) => {
             </div>
             
             <div className='flex  justify-center mx-10'>
-                <a className='p-2 px-4 text-center bg-black text-white inline-block'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9829; Add to Favorites</span></a>
+                <button className='p-2 px-4 text-center bg-black text-white inline-block'
+                    onClick={() => handleAddToFavorites(movieData.title,movieData.poster_path,movieData.id)}
+                >
+                    <span className='border-white border-2 px-5 py-1 border-dotted'>&#9829; Add to Favorites</span>
+                </button>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9974; Where to Watch It?</span></a>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9993; Share This Page</span></a>
             </div>
