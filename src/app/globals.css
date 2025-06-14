@@ -30,7 +30,7 @@ h1, h2, h3{
   font-family: var(--font-amarante);
 }
 
-a, .movie_info, footer, p{
+a, .movie_info, footer, p, button{
   font-family: var(--font-frenchcanon);
 }
 
@@ -52,19 +52,26 @@ nav li a:hover{
   background-color: black;
 }
 
-.home_body, .movie_container, header{
+.home_body, .movie_container, .fave_container, header{
   background-image: linear-gradient(0deg, #dbdbdb 25%, #d4d4d4 25%, #d4d4d4 50%, #dbdbdb 50%, #dbdbdb 75%, #d4d4d4 75%, #d4d4d4 100%);
 background-size: 20.00px 20.00px;
 }
 
-a:not(nav li a){
+a:not(nav li a),button:hover{
   transition: box-shadow 0.5s, font-weight 0.25s;
   cursor: pointer;
 }
 
-a:hover:not(nav li a){
+a:hover:not(nav li a), button:hover{
   box-shadow: 5px 5px 0px rgb(0, 0, 0, 0.5);
+}
+
+a:hover{
   font-weight: bold;
+}
+
+button:hover{
+  font-style: italic;
 }
 
 /*Colors for the proyect: */

@@ -10,11 +10,21 @@
 
 //AL MENOS HACERLA WACHINA
 
+'use client'
+
 import React from 'react'
+import FavoritesContainer from '@/components/FavoritesContainer'
+import { useAppContext } from '@/contexts/AppContext'
 
 const Favorites = () => {
+
+  const {favoritesQty} = useAppContext();
+
   return (
-    <div>Favorites</div>
+    <div className='fave_container lg:w-[50em] m-auto pb-5'>
+      <h2 className='text-3xl border-b-2 text-center'>&#10022; Your Favorites &#10022; ({favoritesQty()})</h2>
+      <FavoritesContainer/>
+    </div>
   )
 }
 

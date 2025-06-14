@@ -1,6 +1,5 @@
 import { Limelight, Amarante, Oregano, IM_Fell_French_Canon } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { AppContextProvider } from "@/contexts/AppContext";
