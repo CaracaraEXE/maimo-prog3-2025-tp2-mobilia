@@ -10,7 +10,7 @@ const Favorites = () => {
 
   return (
     <div className='fave_container lg:w-[50em] m-auto pb-5'>
-      <h2 className='text-3xl border-b-2 text-center'>&#10022; Your Favorites &#10022; ({favoritesQty()})</h2>
+      <h2 className='text-3xl border-b-2 text-center pt-2'>&#10022; Your Favorites &#10022; ({favoritesQty()})</h2>
       <FavoritesContainer/>
     </div>
   )

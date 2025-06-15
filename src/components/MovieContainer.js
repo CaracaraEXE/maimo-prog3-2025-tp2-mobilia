@@ -78,7 +78,7 @@ const MovieContainer = ({id}) => {
                           alt="remove"
                           height={20}
                           width={20}
-                          className='inline mr-2'/>Remove Favorite
+                          className='inline mr-1'/>Remove Favorite
                           </span>
                           : 
                            <span>
@@ -87,7 +87,7 @@ const MovieContainer = ({id}) => {
                           alt="remove"
                           height={20}
                           width={20}
-                          className='inline'/>Favorite
+                          className='inline mr-1'/>Favorite
                           </span>
                       }
                     </span>
