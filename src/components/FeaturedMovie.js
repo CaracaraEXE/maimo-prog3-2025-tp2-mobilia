@@ -11,7 +11,7 @@ const FeaturedMovie = ({movies}) => {
 
   return (
     <div>
-      <div className='flex lg:block'>
+      <div className='flex lg:block px-10 pt-4 lg:pt-2 lg:px-0'>
         <Image
                             src={("https://image.tmdb.org/t/p/original/" + FeaturedMovie.poster_path)}
                             alt={`${FeaturedMovie.title} Poster`}

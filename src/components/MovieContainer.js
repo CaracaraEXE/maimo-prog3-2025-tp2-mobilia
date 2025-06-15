@@ -14,7 +14,7 @@ const MovieContainer = ({id}) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-      const {handleAddToFavorites} = useAppContext();
+      const {handleAddToFavorites, handleRemoveFromFavorites,favorites} = useAppContext();
 
      useEffect(() => {
         const getMovieData = async () => {
@@ -31,6 +31,7 @@ const MovieContainer = ({id}) => {
         getMovieData();
 
      },[]);
+
 
    
 
@@ -60,10 +61,36 @@ const MovieContainer = ({id}) => {
             </div>
             
             <div className='flex  justify-center mx-10'>
-                <button className='p-2 px-4 text-center bg-black text-white inline-block'
-                    onClick={() => handleAddToFavorites(movieData.title,movieData.poster_path,movieData.id)}
+                <button className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'
+            onClick={() => 
+              favorites.find(fave => (fave.id === movieData.id)) ?
+              handleRemoveFromFavorites(movieData.title,movieData.poster_path,movieData.id)
+              :
+              handleAddToFavorites(movieData.title,movieData.poster_path,movieData.id)}
+              
                 >
-                    <span className='border-white border-2 px-5 py-1 border-dotted'>&#9829; Add to Favorites</span>
+                    <span className='border-white border-2 px-5 py-1 border-dotted'>
+                      {
+                        favorites.find(fave => (fave.id === movieData.id)) ?
+                        <span>
+                          <Image
+                          src={"/assets/removeheart.png"}
+                          alt="remove"
+                          height={20}
+                          width={20}
+                          className='inline mr-2'/>Remove Favorite
+                          </span>
+                          : 
+                           <span>
+                          <Image
+                          src={"/assets/addheart.png"}
+                          alt="remove"
+                          height={20}
+                          width={20}
+                          className='inline'/>Favorite
+                          </span>
+                      }
+                    </span>
                 </button>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9974; Where to Watch It?</span></a>
                 <a className='p-2 px-4 text-center bg-black text-white inline-block ml-3.5'><span className='border-white border-2 px-5 py-1 border-dotted'>&#9993; Share This Page</span></a>

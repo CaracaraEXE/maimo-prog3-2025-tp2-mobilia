@@ -9,7 +9,7 @@ const MovieGrid = ({movies}) => {
 
   //eventos sinteticos, onclick, onhover, onmouse
 
-  const {handleAddToFavorites} = useAppContext()
+  const {handleAddToFavorites, favorites, handleRemoveFromFavorites} = useAppContext()
   /*const handleClick = (numero) => {
     alert(numero);
   }*/
@@ -19,19 +19,41 @@ const MovieGrid = ({movies}) => {
       {movies.map((movie) =>
       <div key={movie.id} className='col-span-3 border-black p-5' /*onClick={() => handleClick(movie.id)}*/>
         <h3 className='text-[1em]'>{movie.title}</h3>
-        <Image
-          src={("https://image.tmdb.org/t/p/original/" + movie.poster_path)}
-          alt={`${movie.title} Poster`}
-          width={200}
-          height={200}
-          className='mb-2.5'
-      />
-        <Link href={`/movie/${movie.id}`} className='p-2 text-center bg-black text-white lg:block'><span className='border-white border-2 px-6 lg:px-12 py-0.5 border-dotted'>Info</span></Link>
-         <button className='p-2 text-center bg-black text-white w-full mt-1'
-            onClick={() => handleAddToFavorites(movie.title,movie.poster_path,movie.id)}
-                >
-                    <span className='border-white border-2  py-1 px-1 border-dotted text-[0.95em]'>&#9829; Add to Favorites</span>
+          <button className='p-2 text-center bg-black text-white relative lg:top-1 bottom-1 lg:left-13 left-7 transition-colors hover:bg-gray-600'
+            onClick={() => 
+              favorites.find(fave => (fave.id === movie.id)) ?
+              handleRemoveFromFavorites(movie.title,movie.poster_path,movie.id)
+              :
+              handleAddToFavorites(movie.title,movie.poster_path,movie.id)}
+              
+                >   
+                      {
+                        favorites.find(fave => (fave.id === movie.id)) ?
+                          <Image
+                              src={"/assets/removeheart.png"}
+                              alt='Remove'
+                              height={20}
+                              width={20}
+                          />
+                          : 
+                           <Image
+                              src={"/assets/addheart.png"}
+                              alt='Remove'
+                              height={20}
+                              width={20}
+                          />
+                      }
                 </button>
+          <Image
+            src={("https://image.tmdb.org/t/p/original/" + movie.poster_path)}
+            alt={`${movie.title} Poster`}
+            width={200}
+            height={200}
+            className='mt-[-2.5em] mx-auto'
+        />
+ 
+        <Link href={`/movie/${movie.id}`} className='p-2 text-center bg-black text-white block mt-1'><span className='border-white border-2 px-6 lg:px-12 py-0.5 border-dotted'>Info</span></Link>
+         
         </div>
       )}
         

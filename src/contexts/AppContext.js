@@ -12,7 +12,14 @@ export const AppContextProvider = ({children}) => {
     const [favorites, setFavorites] = useState([]);
 
     const handleAddToFavorites = (title,image,id) => {
-        setFavorites([...favorites, {title, image, id}]);
+        favorites.find(fave => fave.id === id) ? 
+            alert("Ya se añadió esa peli") 
+            : 
+            setFavorites([...favorites, {title, image, id}]);
+    }
+
+    const handleRemoveFromFavorites = (title, image, id) => {
+        setFavorites(favorites.filter(fave => fave.id !== id));
     }
 
     useEffect(() => {console.log(favorites)},[favorites]);
@@ -22,7 +29,7 @@ export const AppContextProvider = ({children}) => {
     return(
         <AppContext.Provider
             value={
-                {favorites, handleAddToFavorites, favoritesQty}
+                {favorites, handleAddToFavorites, favoritesQty, handleRemoveFromFavorites}
             }
         >
             {children}
