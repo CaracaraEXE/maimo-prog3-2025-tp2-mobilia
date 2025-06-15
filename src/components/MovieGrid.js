@@ -6,9 +6,6 @@ import Image from 'next/image'
 import { useAppContext } from '@/contexts/AppContext'
 
 const MovieGrid = ({movies}) => {
-
-  //eventos sinteticos, onclick, onhover, onmouse
-
   const {handleAddToFavorites, favorites, handleRemoveFromFavorites} = useAppContext()
   /*const handleClick = (numero) => {
     alert(numero);

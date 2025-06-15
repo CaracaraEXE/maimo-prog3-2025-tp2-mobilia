@@ -1,13 +1,8 @@
-
-
 import React from 'react'
 import MovieGrid from './MovieGrid';
 import Image from 'next/image';
 
 const HomeBody = ({movies}) => {
-
-  
-  //BRANCHES ARE STOOPID
   return (
     <div className='home_body lg:w-[50em] text-center'>
         <p className='italic text-center p-5'>A website for the love of art.</p>

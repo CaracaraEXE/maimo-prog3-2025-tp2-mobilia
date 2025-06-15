@@ -14,7 +14,7 @@ const Navbar = () => {
                 <li>&#10072;</li>
                 <li className=""><a href="">Genres</a></li>
                 <li>&#10072;</li>
-                <li><Link href="/favorites">Favorites - {favoritesQty()} -</Link></li>
+                <li><Link href="/favorites">Favorites ({favoritesQty()})</Link></li>
             </ul>
         </nav>
   )
