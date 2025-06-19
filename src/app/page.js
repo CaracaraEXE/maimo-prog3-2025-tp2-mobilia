@@ -32,6 +32,8 @@ getData();
 
 },[]);
 
+//Min-height:30px;, line-height
+
   return (
     <>
     {!loading &&

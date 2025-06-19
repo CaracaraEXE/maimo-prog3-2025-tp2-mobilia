@@ -15,7 +15,7 @@ const MovieGrid = ({movies}) => {
     <div className='grid grid-cols-12 px-5 divide-y-2 divide-dotted'>
       {movies.map((movie) =>
       <div key={movie.id} className='col-span-3 border-black p-5' /*onClick={() => handleClick(movie.id)}*/>
-        <h3 className='text-[1em]'>{movie.title}</h3>
+        <h3 className='text-2xl min-w-40 min-h-10 leading-6 pb-2.5'>{movie.title}</h3>
           <button className='p-2 text-center bg-black text-white relative lg:top-1 bottom-1 lg:left-13 left-7 transition-colors hover:bg-gray-600'
             onClick={() => 
               favorites.find(fave => (fave.id === movie.id)) ?
