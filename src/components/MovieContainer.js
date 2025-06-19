@@ -40,7 +40,7 @@ const MovieContainer = ({id}) => {
         {!loading &&
         <>
             <div className='flex justify-center'>
-                <Link href={"/"} className='p-2 px-4 bg-black text-white inline-block'><span className='border-white border-1 px-5 py-1'>Return</span></Link>
+                <Link href={"/"} className='p-2 px-4 bg-black text-white inline-block'><span className='border-white border-2 px-5 py-1 border-dotted'>Return</span></Link>
             </div>
 
             <div className='flex m-5'>
