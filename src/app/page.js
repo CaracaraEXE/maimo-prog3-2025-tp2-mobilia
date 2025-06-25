@@ -13,6 +13,8 @@ export default function Home() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  ///PARA LOS GENEROS -> 
+
 useEffect(() => {
 const getData = async () => {
   setLoading(true);

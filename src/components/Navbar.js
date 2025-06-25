@@ -14,7 +14,7 @@ const Navbar = () => {
             <ul className="flex justify-center items-center gap-5 text-center">
                 <li className=""><Link href="/">Return to Earth</Link></li>
                 <li>&#10072;</li>
-                <li className=""><a href="">Genres</a></li>
+                <li className=""><Link href="/genres">Genres</Link></li>
                 <li>&#10072;</li>
                 <li><Link href="/favorites">Favorites ({favoritesQty()})</Link></li>
             </ul>

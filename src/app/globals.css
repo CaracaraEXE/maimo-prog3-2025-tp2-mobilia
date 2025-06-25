@@ -57,7 +57,7 @@ nav li a:hover{
   background-color: black;
 }
 
-.home_body, .movie_container, .fave_container, header{
+.home_body, .movie_container, .fave_container, header, .genre_body{
   background-image: linear-gradient(0deg, #dbdbdb 25%, #d4d4d4 25%, #d4d4d4 50%, #dbdbdb 50%, #dbdbdb 75%, #d4d4d4 75%, #d4d4d4 100%);
 background-size: 20.00px 20.00px;
 }
