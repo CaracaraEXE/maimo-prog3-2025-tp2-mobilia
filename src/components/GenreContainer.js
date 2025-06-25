@@ -55,7 +55,7 @@ const GenreContainer = () => {
                     <GenreScroll
                         key={genre.id}
                         title={genre.name}
-                        movies={moviesByGenre[genre.name]?.slice(0,12) || []}
+                        movies={moviesByGenre[genre.name].slice(0,8)}
                     />
                     </div>
                 </div>

@@ -5,12 +5,15 @@ import Image from 'next/image'
 
 const GenreScroll = ({movies}) => {
       const {handleAddToFavorites, favorites, handleRemoveFromFavorites} = useAppContext()
-  return (
-    <div className='flex overflow-scroll'>
+  
+      movies.filter(movie => movie.adult !== false);
+  
+      return (
+    <div className='genre_scroll flex overflow-x-scroll mb-5'>
         {movies.map((movie) => (
-            <div key={movie.id} className='border-black p-5' /*onClick={() => handleClick(movie.id)}*/>
+            <div key={movie.id} className='border-black p-5'>
             <h3 className='text-[1.5em] min-w-40 min-h-15 leading-6 pb-2.5 flex items-end justify-center text-center'>{movie.title}</h3>
-          <button className='p-2 text-center bg-black text-white relative lg:top-1 bottom-1 lg:left-13 left-7 transition-colors hover:bg-gray-600'
+          <button className='p-2 text-center bg-black text-white relative left-28 transition-colors hover:bg-gray-600'
             onClick={() => 
               favorites.find(fave => (fave.id === movie.id)) ?
               handleRemoveFromFavorites(movie.title,movie.poster_path,movie.id)

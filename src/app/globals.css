@@ -79,6 +79,9 @@ button:hover{
   font-style: italic;
 }
 
-
+.genre_scroll{
+  scrollbar-width:auto;
+  scrollbar-color: black white;
+}
 
 /*Colors for the proyect: */
