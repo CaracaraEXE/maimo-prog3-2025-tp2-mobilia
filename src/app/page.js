@@ -49,7 +49,7 @@ getData();
 
     {loading && <LoadingIcon/>}
 
-        {error && "HUBO UN ERROR"}
+        {error && <p className='text-white'>No se pudieron mostrar las peliculas.</p>}
     </>
   );
 }

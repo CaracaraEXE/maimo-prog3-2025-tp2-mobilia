@@ -13,7 +13,7 @@ const FavoritesContainer = () => {
     <div className='grid grid-cols-12 px-5 divide-y-2 divide-dotted'>
       {favorites.map((movie) => 
       <div key={movie.id} className='col-span-4 lg:col-span-3 border-black p-5'>
-        <h3 className='text-[1.25em] text-center mb-[-2em]'>{movie.title}</h3>
+        <h3 className='text-[1.25em] text-center mb-[-2em] min-w-40 min-h-15 leading-6 pb-2.5 flex items-end justify-center'>{movie.title}</h3>
          <button className='p-2 text-center bg-black text-white relative lg:top-11 top-10 lg:left-27 left-23 transition-colors hover:bg-gray-600'
                     onClick={() => 
                       handleRemoveFromFavorites(movie.title,movie.poster_path,movie.id)
