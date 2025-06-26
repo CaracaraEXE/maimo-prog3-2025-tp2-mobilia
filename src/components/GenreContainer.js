@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import LoadingIcon from './LoadingIcon.js'
 import GenreScroll from './GenreScroll.js'
-
+import Link from 'next/link.js'
 
 const GenreContainer = () => {
 
@@ -46,19 +46,25 @@ const GenreContainer = () => {
 
   return (
     <div>
+
+                    <p className='italic text-center pt-2.5 text-[1.25em]'>&#128611; Quick Navigation: &#128609;</p>
+        <div className='mx-10 bg-black text-white flex flex-wrap gap-2.5 justify-center py-2.5 border-2 border-dotted'>
+            {genres.map((genre) => (
+                <Link key={genre.id} href={`/genres/#${genre.name}`} className='h-fit'>&#10022; {genre.name}</Link>
+            ))}
+        </div>
+
         {!loading &&
+
             genres.map((genre) => (
-                <div key={genre.id}>
-                    <h2 className='text-3xl  bg-gray-400 border-l-6 border-double ml-10 mr-5 pl-5'> {genre.name}</h2>
-                    
-                    <div className='px-2.5'>
+                <section key={genre.id}>
                     <GenreScroll
                         key={genre.id}
-                        title={genre.name}
-                        movies={moviesByGenre[genre.name].slice(0,8)}
+                        gentitle={genre.name}
+                        movies={moviesByGenre[genre.name].slice(0,12)}
+                        fullroster={moviesByGenre[genre.name]}
                     />
-                    </div>
-                </div>
+                </section>
             ))
         }
          {loading && <LoadingIcon/>}

@@ -7,9 +7,6 @@ import { useAppContext } from '@/contexts/AppContext'
 
 const MovieGrid = ({movies}) => {
   const {handleAddToFavorites, favorites, handleRemoveFromFavorites} = useAppContext()
-  /*const handleClick = (numero) => {
-    alert(numero);
-  }*/
 
   return (
     <div className='grid grid-cols-12 px-5 divide-y-2 divide-dotted'>

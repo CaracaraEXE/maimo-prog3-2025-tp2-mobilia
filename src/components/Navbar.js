@@ -6,9 +6,6 @@ import { useAppContext } from "@/contexts/AppContext"
 const Navbar = () => {
   const {favoritesQty} = useAppContext();
 
-  //<li className=""><a href="">About Our Site</a></li>
-                //<li>&#10072;</li>
-
   return (
         <nav className="bg-gray-400 border-y-2">
             <ul className="flex justify-center items-center gap-5 text-center">
